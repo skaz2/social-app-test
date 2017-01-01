@@ -23,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		7D2912326AD51662301388AA /* Pods-social-app-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-social-app-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-social-app-test/Pods-social-app-test.debug.xcconfig"; sourceTree = "<group>"; };
+		84492C411E197409000C8782 /* social-app-test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "social-app-test.entitlements"; sourceTree = "<group>"; };
 		84E974E71D9A897700328C2B /* social-app-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "social-app-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E974EA1D9A897700328C2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84E974EC1D9A897700328C2B /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -116,6 +117,7 @@
 		84E974E91D9A897700328C2B /* social-app-test */ = {
 			isa = PBXGroup;
 			children = (
+				84492C411E197409000C8782 /* social-app-test.entitlements */,
 				84FAD3071E01C374008D1607 /* Util */,
 				8418542E1D9A964A007A2117 /* Model */,
 				8418542D1D9A9643007A2117 /* Controller */,
@@ -175,6 +177,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 3CHDUXG2E8;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -238,7 +245,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D5699733518DD35D0A7C67E4 /* [CP] Copy Pods Resources */ = {
@@ -393,6 +400,7 @@
 			baseConfigurationReference = 7D2912326AD51662301388AA /* Pods-social-app-test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "social-app-test/social-app-test.entitlements";
 				DEVELOPMENT_TEAM = 3CHDUXG2E8;
 				INFOPLIST_FILE = "social-app-test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -407,6 +415,7 @@
 			baseConfigurationReference = D5BC88CEBD4C9F78C8486D2F /* Pods-social-app-test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "social-app-test/social-app-test.entitlements";
 				DEVELOPMENT_TEAM = 3CHDUXG2E8;
 				INFOPLIST_FILE = "social-app-test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
