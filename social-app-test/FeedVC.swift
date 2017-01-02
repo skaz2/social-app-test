@@ -19,6 +19,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+        DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
+        print(snapshot.value as Any)
+        })
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,7 +39,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
     @IBAction func signOutTapped(_ sender: Any) {
-        print("TESTTTTT")
+        
         let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         print("INFO: ID removed from keychain \(keychainResult)")
         try! FIRAuth.auth()?.signOut()

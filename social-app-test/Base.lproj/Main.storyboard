@@ -156,11 +156,12 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUT-8P-NQH">
                                         <rect key="frame" x="157" y="21" width="59.5" height="36"/>
+                                        <gestureRecognizers/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="26"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign-out" translatesAutoresizingMaskIntoConstraints="NO" id="U8a-nO-O8Y">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign-out" translatesAutoresizingMaskIntoConstraints="NO" id="U8a-nO-O8Y">
                                         <rect key="frame" x="16" y="20" width="45" height="38"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -168,7 +169,7 @@
                                             <constraint firstAttribute="height" constant="38" id="n0x-2U-TDC"/>
                                         </constraints>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="e14-Nq-sv2" appends="YES" id="OGp-iM-8cy"/>
+                                            <outletCollection property="gestureRecognizers" destination="VYK-tL-Pyp" appends="YES" id="TiF-s0-i5u"/>
                                         </connections>
                                     </imageView>
                                 </subviews>
@@ -190,6 +191,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="ydv-6O-Wz7" customClass="CircleView" customModule="social_app_test" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="49" height="49"/>
                                                 <color key="backgroundColor" red="0.066666666669999999" green="0.51372549020000002" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="49" id="1qA-P4-x6m"/>
                                                     <constraint firstAttribute="width" constant="49" id="cxL-q5-Pce"/>
@@ -348,9 +350,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GNW-JY-VCX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="e14-Nq-sv2">
+                <tapGestureRecognizer id="VYK-tL-Pyp">
                     <connections>
-                        <action selector="signOutTapped:" destination="42M-R8-1Ya" id="s3H-lq-2GJ"/>
+                        <action selector="signOutTapped:" destination="42M-R8-1Ya" id="Idy-6z-Lyo"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
